@@ -15,7 +15,6 @@ public class MathApp {
         };
         MathOperation mul=(num1,num2)->num1*num2;
 
-        System.out.println("additon :- "+addition.operate(3,4));
-        System.out.println("substraction :- "+subs.operate(5,2));
+        MathOperation.print_result(1,2,"additoin",addition);
     }
 }
