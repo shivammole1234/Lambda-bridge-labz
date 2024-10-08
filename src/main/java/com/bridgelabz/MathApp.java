@@ -3,6 +3,7 @@ package com.bridgelabz;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 class Num_list_consumer implements Consumer<Integer>{
     public void accept(Integer num){
@@ -45,8 +46,13 @@ public class MathApp {
         numbers.forEach(num-> System.out.println("number is :- "+num));
 
 
+        Function<Integer,Double> to_double_fun= num->num*2.0;
+        System.out.println("using function interface to convert to double:");
+        numbers.forEach(num-> System.out.println("original number:- "+num+", double x2:- "+to_double_fun.apply(num)));
 
-
+        converter_double<Integer,Double> int_convert_double=num->num*2.0;
+        System.out.println("using the custon fucntional interface");
+        numbers.forEach(num-> System.out.println("Original num :- "+num+" DOuble num:- " + int_convert_double.convert(num)));
 
     }
 }
